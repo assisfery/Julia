@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://res.cloudinary.com/lilaslab/image/upload/v1588374493/logo_hjvwvb.png" width="84">
+	<img src="https://res.cloudinary.com/lilaslab/image/upload/v1588374493/logo_hjvwvb.png" height="96">
 </p>
 
 # Julia | Chatbot Engine | Documentation
