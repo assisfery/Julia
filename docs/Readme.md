@@ -75,7 +75,7 @@ You can change if is need the **apiUrl** doing that
 ## Setup Backend
 In the **demo-chatbot.php** file you can put the follow code.
 
-´´´php
+```html
 <?php
 
 	include "../lib/WebBot.php";
@@ -100,4 +100,4 @@ In the **demo-chatbot.php** file you can put the follow code.
 	$myBot->respond();
 
 ?>
-´´´
+```

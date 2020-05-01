@@ -21,13 +21,14 @@
 			<p>
 			See how simple you can create a chatbot.
 			</p>
-			
+
 		</div>
 
 		<br>
 		<div id="markdown-box"><?php
 			$content = file_get_contents("Readme.md");
-			echo htmlentities($content);
+			// echo htmlentities($content);
+			echo $content;
 		?></div>
 		
 	</main>
