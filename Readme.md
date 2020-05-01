@@ -11,6 +11,10 @@
 </div>
 
 <p align="center">
+	[Documentation](https://github.com/assisfery/Julia/tree/master/docs)
+</p>
+
+<p align="center">
 	<img src="https://res.cloudinary.com/lilaslab/image/upload/v1588375100/chat_byrhim.png">
 </p>
 
