@@ -22,6 +22,12 @@ $myBot->hears("bye", function($bot){
 
 }, "equality");
 
+$myBot->hears("/how is going*|how are you*/", function($bot){
+
+	$bot->answer(new Message("text", "I am cool"));
+
+}, "regex");
+
 $myBot->hears("image", function($bot){
 
 	$bot->answer(new Message("image", "https://images.unsplash.com/photo-1548717584-eac43a401252?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"));

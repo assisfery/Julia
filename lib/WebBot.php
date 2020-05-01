@@ -53,6 +53,13 @@ class WebBot
 				$match = true;
 			}
 		}
+		else if($howToCompare == "regex")
+		{
+			if(preg_match($input, $this->heard->content, $output_matches, PREG_OFFSET_CAPTURE))
+			{
+				$match = true;
+			}
+		}
 
 		if($match)
 		{

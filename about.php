@@ -16,13 +16,9 @@
 			Julia | Chatbot Engine
 		</h1>
 
-		<br>
-		<div>
-			<a href="./">Home</a> |
-			<a href="demo">Demo</a> |
-			<a href="#">Doc</a> |
-			<a href="about">About</a>
-		</div>
+		<?php
+			include "nav.php";
+		?>
 
 		<br>
 		<h3>About author</h3>

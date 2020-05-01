@@ -9,13 +9,9 @@
 
 	<main class="container py-4 text-center">
 		
-		<br>
-		<div>
-			<a href="./">Home</a> |
-			<a href="demo">Demo</a> |
-			<a href="#">Doc</a> |
-			<a href="about">About</a>
-		</div>
+		<?php
+			include "nav.php";
+		?>
 
 		<br>
 		<img src="assets/img/african-woman.svg" alt="african-woman" height="48">
