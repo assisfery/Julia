@@ -48,7 +48,7 @@
 			</div>
 
 			<div class="message-box message-box-2">
-				<div>Hello World</div>
+				<div>Lorem</div>
 			</div>
 		</div>
 
