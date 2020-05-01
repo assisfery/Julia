@@ -13,20 +13,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 	<main class="container py-4 text-center">
-		
-		<br>
-		<br>
-		<h1>
-			<img src="assets/img/african-woman.svg" alt="african-woman" height="48">
-			Julia | Chatbot Engine
-		</h1>
-
-		<br>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ullam neque sint eaque sequi ad molestias, voluptate commodi cupiditate doloremque consequuntur beatae perferendis nostrum non nihil aut excepturi. Ratione, impedit.</p>
 		
 		<br>
 		<div>
@@ -35,6 +27,22 @@
 			<a href="#">Doc</a> |
 			<a href="about">About</a>
 		</div>
+
+		<br>
+		<h1>
+			<img src="assets/img/african-woman.svg" alt="african-woman" height="48">
+			Julia | Chatbot Engine
+		</h1>
+
+		<br>
+		<div>
+			<div class="lds-ripple">
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		
+		
 		
 	</main>
 	

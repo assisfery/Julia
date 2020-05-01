@@ -26,15 +26,19 @@
 		</h1>
 
 		<br>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ullam neque sint eaque sequi ad molestias, voluptate commodi cupiditate doloremque consequuntur beatae perferendis nostrum non nihil aut excepturi. Ratione, impedit.</p>
-		
-		<br>
 		<div>
 			<a href="./">Home</a> |
 			<a href="demo">Demo</a> |
 			<a href="#">Doc</a> |
 			<a href="about">About</a>
 		</div>
+
+		<br>
+		<div>
+			Icons made by
+			<a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+		</div>
+		
 		
 	</main>
 	
