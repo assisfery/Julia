@@ -30,7 +30,12 @@ Julia.says = function(msgs)
 {
 	for(var i = 0; i < msgs.length; i++)
 	{
-		$(".chat-box").append('<div class="message-box"><div>' + msgs[i].content + '</div></div>');
+		if(msgs[i].type == "image")
+		{
+			$(".chat-box").append('<div class="message-box"><div><img src="' + msgs[i].content + '"></div></div>');
+		}
+		else // type = "text"
+			$(".chat-box").append('<div class="message-box"><div>' + msgs[i].content + '</div></div>');
 	}
 
 	$('.chat-box').animate({scrollTop: $('.chat-box')[0].scrollHeight }, 1000);
