@@ -1,3 +1,7 @@
+![African woman](../assets/img/african-woman.svg =84x84 "African woman")
+
+# Julia | Chatbot Engine
+
 # Web Chatbot
 
 ## Setup Frontend

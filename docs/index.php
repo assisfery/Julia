@@ -12,11 +12,6 @@
 	<main class="container py-4">
 		
 		<div class="text-center">
-			<br>
-			<img src="../assets/img/african-woman.svg" alt="african-woman" height="48">
-			<h1 class="h1">
-				Julia | Chatbot Engine
-			</h1>
 			
 			<?php
 				include "nav.php";
@@ -26,10 +21,7 @@
 			<p>
 			See how simple you can create a chatbot.
 			</p>
-
-			<?php
-				include "subnav.php";
-			?>
+			
 		</div>
 
 		<br>

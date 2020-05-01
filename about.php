@@ -10,8 +10,8 @@
 	<main class="container py-4 text-center">
 		
 		<br>
-		<img src="assets/img/african-woman.svg" alt="african-woman" height="48">
 		<h1>
+			<img src="assets/img/african-woman.svg" alt="african-woman" height="84">
 			Julia | Chatbot Engine
 		</h1>
 
