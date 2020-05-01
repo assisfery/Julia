@@ -17,7 +17,11 @@
 		</h1>
 
 		<br>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ullam neque sint eaque sequi ad molestias, voluptate commodi cupiditate doloremque consequuntur beatae perferendis nostrum non nihil aut excepturi. Ratione, impedit.</p>
+		<p>
+		A productive chatbot development engine,<br>
+		where we can build chatbots in simple<br>
+		way without spend time.
+		</p>
 		
 		<br>
 		<div>

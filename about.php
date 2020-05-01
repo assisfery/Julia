@@ -25,6 +25,15 @@
 		</div>
 
 		<br>
+		<h3>About author</h3>
+		<p>
+			This library was started by <a href="https://github.com/assisfery" target="_blank">Assis Ferreira</a><br>
+			with the goal to make a productive chatbot development engine,<br>
+			where we can build chatbots in simple way without spend time.
+		</p>
+
+		<br>
+		<h3>Others</h3>
 		<div>
 			Icons made by
 			<a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
