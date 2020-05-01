@@ -14,7 +14,7 @@
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/julia.css">
 </head>
 <body>
 
@@ -42,7 +42,25 @@
 			</div>
 		</div>
 		
-		
+		<div class="chat-box">
+			<div class="message-box"">
+				<div>Hello World</div>
+			</div>
+
+			<div class="message-box message-box-2">
+				<div>Hello World</div>
+			</div>
+		</div>
+
+		<br>
+		<div class="compose-box">
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" placeholder="write a message...">
+				<div class="input-group-append">
+					<button class="btn btn-primary" type="submit">send</button>
+				</div>
+			</div>
+		</div>
 		
 	</main>
 	

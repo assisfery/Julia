@@ -1,4 +1,44 @@
 
+/* CHAT BOX */
+.chat-box{
+  max-width: 400px;
+  margin: 0 auto;
+  height: 240px;
+  overflow-y: auto;
+}
+
+.compose-box{
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* MESSAGE BOX */
+
+.message-box{
+  margin: 8px 0;
+}
+
+.message-box::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.message-box > div{
+  background-color: #ddd;
+  border-radius: 8px 8px 8px 0;
+  padding: 8px 12px;
+  max-width: 80%;
+  float: left;
+}
+
+.message-box-2 > div{
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px 8px 0 8px;
+  float: right;
+}
+
 /* LOADER */
 .lds-ripple {
   display: inline-block;
