@@ -54,9 +54,9 @@ You can change if is need the **apiUrl** doing that
 <div class="compose-box">
 	<div class="input-group mb-3">
 		<input type="text" class="form-control" placeholder="write a message...">
-	<div class="input-group-append">
-		<button class="btn btn-primary" type="submit">send</button>
-	</div>
+		<div class="input-group-append">
+			<button class="btn btn-primary" type="submit">send</button>
+		</div>
 	</div>
 </div>
 ```

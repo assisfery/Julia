@@ -43,6 +43,12 @@
 			margin-top: 24px;
 		}
 
+		pre{
+			background-color: #eee;
+			padding: 8px 12px;
+			border-radius: 4px;
+		}
+
 	</style>
 	<script>
 		
