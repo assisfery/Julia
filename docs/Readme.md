@@ -1,6 +1,8 @@
-![African woman](../assets/img/african-woman.svg =84x84 "African woman")
+<p align="center">
+	<img src="https://res.cloudinary.com/lilaslab/image/upload/v1588374493/logo_hjvwvb.png" width="84">
+</p>
 
-# Julia | Chatbot Engine
+# Julia | Chatbot Engine | Documentation
 
 # Web Chatbot
 

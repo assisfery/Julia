@@ -1,6 +1,20 @@
-![African woman](../assets/img/african-woman.svg =84x84 "African woman")
-# Julia | Chatbot Engine
+<p align="center">
+	<img src="https://res.cloudinary.com/lilaslab/image/upload/v1588374493/logo_hjvwvb.png" width="84">
+</p>
 
-A productive chatbot development engine,
-where we can build chatbots in simple
-way without spend time.
+<div align="center">
+	
+	A productive chatbot development engine,
+	where we can build chatbots in simple
+	way without spend time.
+
+</div>
+
+## Demo
+
+<div align="center">
+	## Demo
+	
+	<img src="https://res.cloudinary.com/lilaslab/image/upload/v1588374603/chat_qccnuv.png">
+</div>
+
