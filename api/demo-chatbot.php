@@ -12,7 +12,7 @@ $myBot->listen();
 // conversation logic
 $myBot->hears("hello", function($bot){
 
-	$bot->answer(new Message("text", "Hello my friend"));
+	$bot->answer(new Message("text", "Hello my friend ⚡"));
 
 });
 

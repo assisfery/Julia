@@ -54,6 +54,10 @@
 	</main>
 
 	<script src="assets/js/julia.js"></script>
+	<script>
+		// Julia.addChatBox(".chat-box2");
+		// Julia.addComposeBox(".compose-box2");
+	</script>
 	
 </body>
 </html>

@@ -41,8 +41,34 @@ Julia.says = function(msgs)
 	$('.chat-box').animate({scrollTop: $('.chat-box')[0].scrollHeight }, 1000);
 }
 
-$(document).ready(function(){
+Julia.getMessage = function()
+{
+	var msg = $(".compose-box input").val();
 
+	if(msg)
+	{
+		$(".compose-box input").val("");
+		Julia.hears(msg)
+
+		$(".chat-box").append('<div class="message-box message-box-2"><div>' + msg + '</div></div>');
+	}
+
+	$('.chat-box').animate({scrollTop: $('.chat-box')[0].scrollHeight}, 100);
+}
+
+Julia.addChatBox = function(element)
+{
+	$(element).html('<div class="chat-box"></div>');
+}
+
+Julia.addComposeBox = function(element)
+{
+	$(element).html('<div class="compose-box"><div class="input-group mb-3"><input type="text" class="form-control" placeholder="write a message…"><div class="input-group-append"><button class="btn btn-primary" type="submit">send</button></div></div></div>');
+	Julia.setEvents();
+}
+
+Julia.setEvents = function()
+{
 	$(".compose-box button").click(function(){
 
 		Julia.getMessage();
@@ -59,21 +85,10 @@ $(document).ready(function(){
 		}
 
 	});
+}
+
+$(document).ready(function(){
+
+	Julia.setEvents();
 
 });
-
-Julia.getMessage = function()
-{
-	var msg = $(".compose-box input").val();
-
-	if(msg)
-	{
-		$(".compose-box input").val("");
-
-		Julia.hears(msg);
-
-		$(".chat-box").append('<div class="message-box message-box-2"><div>' + msg + '</div></div>');
-	}
-
-	$('.chat-box').animate({scrollTop: $('.chat-box')[0].scrollHeight}, 100);
-}

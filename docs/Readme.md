@@ -27,6 +27,13 @@ You can change if is need the **apiUrl** doing that
 <div class="chat-box">
 </div>
 
+##### Or add chat-box using JS
+<div class="chat-container"></div>
+
+<script>
+	Julia.addChatBox(".chat-container");
+</script>
+
 ##### Add compose-box element to your html
 
 <div class="compose-box">
@@ -44,4 +51,12 @@ You can change if is need the **apiUrl** doing that
 </div>
 
 </div>
+
+##### Or add compose-box using JS
+<div class="compose-container"></div>
+
+<script>
+	Julia.addComposeBox(".compose-container");
+</script>
+
 
