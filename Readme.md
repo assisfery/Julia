@@ -11,7 +11,7 @@
 </div>
 
 <p align="center">
-	[Documentation](https://github.com/assisfery/Julia/tree/master/docs)
+	<a href="https://github.com/assisfery/Julia/tree/master/docs">Documentation</a>
 </p>
 
 <p align="center">
