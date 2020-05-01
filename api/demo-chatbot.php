@@ -4,6 +4,7 @@ include "../lib/WebBot.php";
 
 use Julia\WebBot;
 use Julia\Message;
+use Julia\Emoji;
 
 // prepare
 $myBot = new WebBot();
@@ -12,7 +13,7 @@ $myBot->listen();
 // conversation logic
 $myBot->hears("hello", function($bot){
 
-	$bot->answer(new Message("text", "Hello my friend ⚡"));
+	$bot->answer(new Message("text", "Hello my friend " . Emoji::mult(Emoji::$smile) ));
 
 });
 
@@ -38,7 +39,7 @@ $myBot->hears("image", function($bot){
 
 $myBot->confuse(function($bot){
 
-	$bot->answer(new Message("text", "I didnt understand"));
+	$bot->answer(new Message("text", "I didnt understand " . Emoji::mult(Emoji::$confused) ));
 
 });
 

@@ -1,6 +1,6 @@
 # Web Chatbot
 
-## Get Started
+## Setup Frontend
 
 ### Import file
 In **bot.html** file add these files
@@ -60,3 +60,31 @@ You can change if is need the **apiUrl** doing that
 </script>
 
 
+## Setup Backend
+In the **demo-chatbot.php** file you can put the follow code.
+
+<?php
+
+include "../lib/WebBot.php";
+
+use Julia\WebBot;
+
+use Julia\Message;
+
+// create the bot
+$myBot = new WebBot();
+
+// handle the received message
+$myBot->listen();
+
+// when the bot get the message "hello" it will respond "Hello my friend"
+$myBot->hears("hello", function($bot){
+
+$bot->answer(new Message("text", "Hello my friend"));
+
+});
+
+// send all responses
+$myBot->respond();
+
+?>

@@ -5,6 +5,7 @@ namespace Julia;
 include 'Model/Message.php';
 include 'Model/Reply.php';
 include 'Util/HttpRequest.php';
+include 'Emoji.php';
 
 class WebBot
 {
