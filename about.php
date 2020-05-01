@@ -10,7 +10,6 @@
 	<main class="container py-4 text-center">
 		
 		<br>
-		<br>
 		<img src="assets/img/african-woman.svg" alt="african-woman" height="48">
 		<h1>
 			Julia | Chatbot Engine

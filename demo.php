@@ -9,16 +9,17 @@
 
 	<main class="container py-4 text-center">
 		
-		<?php
-			include "nav.php";
-		?>
-
 		<br>
 		<img src="assets/img/african-woman.svg" alt="african-woman" height="48">
 		<h1>
 			Julia | Chatbot Engine
 		</h1>
 
+		<?php
+			include "nav.php";
+		?>
+
+		<br>
 		<div>
 			<div class="lds-ripple">
 				<div></div>
