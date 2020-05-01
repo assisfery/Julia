@@ -63,6 +63,8 @@
 		</div>
 		
 	</main>
+
+	<script src="assets/js/julia.js"></script>
 	
 </body>
 </html>
