@@ -10,11 +10,8 @@
 
 </div>
 
-## Demo
-
-<div align="center">
+<p align="center">
 	## Demo
-
 	<img src="https://res.cloudinary.com/lilaslab/image/upload/v1588374603/chat_qccnuv.png">
-</div>
+</p>
 
