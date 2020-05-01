@@ -4,6 +4,7 @@ namespace Julia;
 
 include 'Model/Message.php';
 include 'Model/Reply.php';
+include 'Util/HttpRequest.php';
 
 class WebBot
 {
@@ -14,11 +15,21 @@ class WebBot
 		$this->replys = new Reply();
 	}
 
+	// receive all inputs
 	function listen()
 	{
-		$this->heard = new Message("text", "hello");
+		// read the http body
+		$receivedMessage = HttpRequest::body();
+
+		// get the message received
+		$type = $receivedMessage->type ?? "text";
+		$content = $receivedMessage->content ?? "";
+
+		// set what was read
+		$this->heard = new Message($type, $content);
 	}
 
+	// verify if input is like expected
 	function hears($input, $callback)
 	{
 		if($input == $this->heard->content)
@@ -27,13 +38,16 @@ class WebBot
 		}
 	}
 
+	// add the answer to the replys
 	function answer($msg)
 	{
 		$this->replys->add($msg);
 	}
 
+	// echo all outputs
 	function respond()
 	{
+		header('Content-Type: application/json');
 		echo json_encode($this->replys);
 	}
 }
