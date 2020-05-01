@@ -77,6 +77,15 @@ class WebBot
 		$this->replies->add($msg);
 	}
 
+	function answerRandom($msgs)
+	{
+		$l = count($msgs);
+
+		$i = mt_rand(0, $l-1);
+
+		$this->replies->add($msgs[$i]);
+	}
+
 	// when the bot dont understand nothing
 	function confuse($callback)
 	{

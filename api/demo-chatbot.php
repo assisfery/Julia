@@ -19,7 +19,10 @@ $myBot->hears("hello", function($bot){
 
 $myBot->hears("bye", function($bot){
 
-	$bot->answer(new Message("text", "See you later"));
+	$bot->answerRandom([
+			new Message("text", "See you later"),
+			new Message("text", "Bye my dear friend")
+		]);
 
 }, "equality");
 
