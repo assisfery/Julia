@@ -8,13 +8,15 @@ include 'Util/HttpRequest.php';
 
 class WebBot
 {
-	public $replys;
+	public $replies;
 	public $heard;
 
 	public $understandSomething = false;
 
+	public $verificationType = "case-insensitive";
+
 	function __construct() {
-		$this->replys = new Reply();
+		$this->replies = new Reply();
 	}
 
 	// receive all inputs
@@ -32,21 +34,39 @@ class WebBot
 	}
 
 	// verify if input is like expected
-	function hears($input, $callback)
+	function hears($input, $callback, $compare = null)
 	{
-		if($input == $this->heard->content)
+		$howToCompare = $compare ?? $this->verificationType;
+		$match = false;
+
+		if($howToCompare == "equality")
+		{
+			if($input == $this->heard->content)
+			{
+				$match = true;
+			}
+		}
+		else if($howToCompare == "case-insensitive")
+		{
+			if(strtolower($input) == strtolower($this->heard->content))
+			{
+				$match = true;
+			}
+		}
+
+		if($match)
 		{
 			// DONT BE CONFUSE AT END
 			$this->understandSomething = true;
 
 			$callback($this);
-		}
+		}		
 	}
 
-	// add the answer to the replys
+	// add the answer to the replies
 	function answer($msg)
 	{
-		$this->replys->add($msg);
+		$this->replies->add($msg);
 	}
 
 	// when the bot dont understand nothing
@@ -62,7 +82,7 @@ class WebBot
 	function respond()
 	{
 		header('Content-Type: application/json');
-		echo json_encode($this->replys);
+		echo json_encode($this->replies);
 	}
 }
 
