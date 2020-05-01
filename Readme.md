@@ -11,7 +11,6 @@
 </div>
 
 <p align="center">
-	## Demo
-	<img src="https://res.cloudinary.com/lilaslab/image/upload/v1588374603/chat_qccnuv.png">
+	<img src="https://res.cloudinary.com/lilaslab/image/upload/v1588375100/chat_byrhim.png">
 </p>
 
