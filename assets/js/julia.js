@@ -1,5 +1,6 @@
 var Julia = {};
 Julia.apiUrl = "api/demo-chatbot";
+Julia.responseDelay = 1000;
 
 Julia.hears = function(msg)
 {
@@ -11,7 +12,11 @@ Julia.hears = function(msg)
 	.done(function(data) {
 
 		console.log(data.messages);
-		Julia.says(data.messages);
+
+		// DELAY 1 S
+		setTimeout(function(){
+			Julia.says(data.messages);
+		}, Julia.responseDelay);
 
 	})
 	.fail(function() {

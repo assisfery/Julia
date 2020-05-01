@@ -22,6 +22,12 @@ $myBot->hears("bye", function($bot){
 
 });
 
+$myBot->confuse(function($bot){
+
+	$bot->answer(new Message("text", "I didnt understand"));
+
+});
+
 // respond
 $myBot->respond();
 

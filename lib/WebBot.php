@@ -11,6 +11,8 @@ class WebBot
 	public $replys;
 	public $heard;
 
+	public $understandSomething = false;
+
 	function __construct() {
 		$this->replys = new Reply();
 	}
@@ -34,6 +36,9 @@ class WebBot
 	{
 		if($input == $this->heard->content)
 		{
+			// DONT BE CONFUSE AT END
+			$this->understandSomething = true;
+
 			$callback($this);
 		}
 	}
@@ -42,6 +47,15 @@ class WebBot
 	function answer($msg)
 	{
 		$this->replys->add($msg);
+	}
+
+	// when the bot dont understand nothing
+	function confuse($callback)
+	{
+		if(!$this->understandSomething)
+		{
+			$callback($this);
+		}
 	}
 
 	// echo all outputs

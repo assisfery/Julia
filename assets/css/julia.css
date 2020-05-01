@@ -3,7 +3,7 @@
 .chat-box{
   max-width: 400px;
   margin: 0 auto;
-  height: 240px;
+  height: 220px;
   overflow-y: auto;
 }
 
