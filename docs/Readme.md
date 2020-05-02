@@ -130,7 +130,7 @@ $myBot->hears("image", function($bot){
 ## Comparison operator
 By default the user input will be compare
 with contains operator, so if the user input contains
-the hears key the bot will do some action
+the hears function key/pattern the bot will do some action.
 
 The supported operator are:
 - contains (by default)
@@ -155,4 +155,28 @@ $myBot->hears("NO", function($bot){
 }, "equality");
 
 ?>
+```
+
+## Util
+
+### Answer As
+You can copy answer from one pattern(key/input) to another pattern.
+
+In the follow example we gonna answer for input "/Hi|Hey)/" like
+it should be asnswer for "hello" input.
+
+So if the bot received "/Hi|Hey)/ it will give the same answer
+as "hello" input.
+
+```php
+$myBot->hears("hello", function($bot){
+
+	$bot->answer(new Message("text", "Hello my friend"));
+
+});
+
+$myBot->hears("/Hi|Hey)/", function($bot){
+	$bot->answerAs("hello");
+}, "regex");
+
 ```

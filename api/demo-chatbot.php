@@ -17,9 +17,9 @@ $myBot->hears("hello", function($bot){
 
 });
 
-$myBot->hears("hi", function($bot){
+$myBot->hears("/(h|H)(i|ey)/", function($bot){
 	$bot->answerAs("hello");
-});
+}, "regex");
 
 $myBot->hears("bye", function($bot){
 
