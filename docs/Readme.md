@@ -101,3 +101,8 @@ In the **demo-chatbot.php** file you can put the follow code.
 
 ?>
 ```
+## Messages
+
+
+
+## Comparison operator

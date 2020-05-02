@@ -57,26 +57,19 @@ class WebBot
 
 		// if the comparation operator
 		// is equality we gonna compare with == operator
-		if($howToCompare == "equality")
+		if($howToCompare == "contains")
+		{
+			if(Str::contains(Str::lower($this->heard->content), Str::lower($input)))
+			{
+				$match = true;
+			}
+		}
+		else if($howToCompare == "equality")
 		{
 			if($input == $this->heard->content)
 			{
 				// at end we will know
 				// that something match
-				$match = true;
-			}
-		}
-		else if($howToCompare == "case-insensitive")
-		{
-			if(strtolower($input) == strtolower($this->heard->content))
-			{
-				$match = true;
-			}
-		}
-		else if($howToCompare == "contains")
-		{
-			if(Str::contains(Str::lower($this->heard->content), Str::lower($input)))
-			{
 				$match = true;
 			}
 		}
