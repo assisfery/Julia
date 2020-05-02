@@ -44,6 +44,11 @@
   max-height: 200px;
 }
 
+.message-box video{
+  max-width: 100%;
+  max-height: 200px;
+}
+
 /* LOADER */
 .lds-ripple {
   display: inline-block;

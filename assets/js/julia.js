@@ -34,6 +34,10 @@ Julia.says = function(msgs)
 		{
 			$(".chat-box").append('<div class="message-box"><div><img src="' + msgs[i].content + '"></div></div>');
 		}
+		else if(msgs[i].type == "video")
+		{
+			$(".chat-box").append('<div class="message-box"><div><video controls><source src="' + msgs[i].content + '"></video></div></div>');
+		}
 		else // type = "text"
 			$(".chat-box").append('<div class="message-box"><div>' + msgs[i].content + '</div></div>');
 	}

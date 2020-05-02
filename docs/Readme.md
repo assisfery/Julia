@@ -106,6 +106,7 @@ In the **demo-chatbot.php** file you can put the follow code.
 The supported messages types are:
 - text
 - image
+- video
 
 ```php
 <?php
@@ -121,6 +122,13 @@ $myBot->hears("hello", function($bot){
 $myBot->hears("image", function($bot){
 
 	$bot->answer(new Message("image", "image-url"));
+
+});
+
+// respond with video
+$myBot->hears("send me a video", function($bot){
+
+	$bot->answer(new Message("image", "video-url"));
 
 });
 
@@ -180,9 +188,3 @@ $myBot->hears("/Hi|Hey)/", function($bot){
 }, "regex");
 
 ```
-
-### Others
-<div>
-	Icons made by
-	<a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-</div>
