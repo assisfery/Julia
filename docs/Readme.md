@@ -74,7 +74,7 @@ You can change if is need the **apiUrl** doing that
 ## Setup Backend
 In the **demo-chatbot.php** file you can put the follow code.
 
-```html
+```php
 <?php
 
 	include "../lib/WebBot.php";
@@ -101,9 +101,13 @@ In the **demo-chatbot.php** file you can put the follow code.
 
 ?>
 ```
-## Messages
 
-```html
+## Messages Type
+The supported messages types are:
+- text
+- image
+
+```php
 <?php
 
 // respond with text
@@ -123,5 +127,32 @@ $myBot->hears("image", function($bot){
 ?>
 ```
 
-
 ## Comparison operator
+By default the user input will be compare
+with contains operator, so if the user input contains
+the hears key the bot will do some action
+
+The supported operator are:
+- contains (by default)
+- equality - the input is the same as the key
+- regex - the input matches with the key
+
+```php
+<?php
+
+// verify the input with regex
+$myBot->hears("/(h|H)ello|(h|H)i/", function($bot){
+
+	$bot->answer(new Message("text", "Yes we understand" ));
+
+}, "regex");
+
+// verify the input with regex
+$myBot->hears("NO", function($bot){
+
+	$bot->answer(new Message("text", "Ok will received NO" ));
+
+}, "equality");
+
+?>
+```

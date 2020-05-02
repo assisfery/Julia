@@ -4,6 +4,8 @@ namespace Julia;
 
 include 'Model/Message.php';
 include 'Model/Reply.php';
+include 'Model/Flow.php';
+include 'Model/Dialog.php';
 include 'Util/HttpRequest.php';
 include 'Util/String.php';
 include 'Emoji.php';
@@ -29,8 +31,12 @@ class WebBot
 	// the message from the user and what we expected
 	public $verificationType = "contains";
 
+	// chache the dialogue
+	public $flow;
+
 	function __construct() {
 		$this->replies = new Reply();
+		$this->flow = new Flow();
 	}
 
 	// receive all inputs
@@ -50,9 +56,13 @@ class WebBot
 	// verify if input is like expected
 	function hears($input, $callback, $compare = null)
 	{
+		// how to compare
 		$howToCompare = $compare ?? $this->verificationType;
+		
+		// find a output/understands something
 		$match = false;
 
+		// regex matches / only will be set in regex comparison
 		$output_matches = null;
 
 		// if the comparation operator
@@ -93,6 +103,11 @@ class WebBot
 			}
 		}
 
+		// flow cache
+		$this->flow->dialogs[] = new Dialog($input, null, $callback, $howToCompare);
+
+		// if found something
+		// execute the callback
 		if($match)
 		{
 			// DONT BE CONFUSE AT END
@@ -118,6 +133,50 @@ class WebBot
 		$i = mt_rand(0, $l-1);
 
 		$this->replies->add($msgs[$i]);
+	}
+
+	function answerAs($input)
+	{
+		$l = count($this->flow->dialogs);
+
+		for($i = 0; $i < $l; $i++)
+		{
+			if($input == $this->flow->dialogs[$i]->input)
+			{
+
+				// copied in hears method
+				$howToCompare = $this->flow->dialogs[$i]->compare ?? $this->verificationType;
+				$match = false;
+				$output_matches = null;
+
+				if($howToCompare == "contains")
+					if(Str::contains(Str::lower($input), Str::lower($this->flow->dialogs[$i]->input)))
+						$match = true;
+				else if($howToCompare == "equality")
+					if($input == $this->flow->dialogs[$i]->input)
+						$match = true;
+				else if($howToCompare == "regex")
+					if(preg_match($this->flow->dialogs[$i]->input, $input, $output_matches, PREG_OFFSET_CAPTURE))
+					{
+						$match = true;
+						$l2 = count($output_matches);
+						$o = array();
+						for($j = 1; $j < $l2; $j++)
+						{
+							$o[] = $output_matches[$j][0];
+						}
+						$output_matches = $o;
+					}
+
+				if($match)
+				{
+					$this->understandSomething = true;
+					call_user_func($this->flow->dialogs[$i]->callback, $this);
+				}
+				// end copy
+	
+			}
+		}
 	}
 
 	// when the bot dont understand nothing

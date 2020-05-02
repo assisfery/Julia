@@ -17,6 +17,10 @@ $myBot->hears("hello", function($bot){
 
 });
 
+$myBot->hears("hi", function($bot){
+	$bot->answerAs("hello");
+});
+
 $myBot->hears("bye", function($bot){
 
 	$bot->answerRandom([
@@ -24,7 +28,7 @@ $myBot->hears("bye", function($bot){
 			new Message("text", "Bye my dear friend")
 		]);
 
-}, "equality");
+});
 
 $myBot->hears("/how is going*|how are you*/", function($bot){
 
