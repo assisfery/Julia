@@ -19,7 +19,6 @@
 			include "nav.php";
 		?>
 
-		<br>
 		<div>
 			<div class="lds-ripple">
 				<div></div>

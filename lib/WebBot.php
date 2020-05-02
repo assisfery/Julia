@@ -69,6 +69,16 @@ class WebBot
 			if(preg_match($input, $this->heard->content, $output_matches, PREG_OFFSET_CAPTURE))
 			{
 				$match = true;
+
+				$l = count($output_matches);
+				$o = array();
+
+				for($i = 1; $i < $l; $i++)
+				{
+					$o[] = $output_matches[$i][0];
+				}
+
+				$output_matches = $o;
 			}
 		}
 

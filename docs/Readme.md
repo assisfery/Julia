@@ -33,8 +33,7 @@ You can change if is need the **apiUrl** doing that
 ##### Add chat-box element to your html
 
 ```html
-<div class="chat-box">
-</div>
+<div class="chat-box"></div>
 ```
 
 ##### Or add chat-box using JS
