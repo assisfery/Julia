@@ -103,6 +103,25 @@ In the **demo-chatbot.php** file you can put the follow code.
 ```
 ## Messages
 
+```html
+<?php
+
+// respond with text
+$myBot->hears("hello", function($bot){
+
+	$bot->answer(new Message("text", "text-message" ));
+
+});
+
+// respond with image
+$myBot->hears("image", function($bot){
+
+	$bot->answer(new Message("image", "image-url"));
+
+});
+
+?>
+```
 
 
 ## Comparison operator
