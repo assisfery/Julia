@@ -10,11 +10,23 @@ include 'Emoji.php';
 
 class WebBot
 {
+	// the message replies that will
+	// be sent to the user
 	public $replies;
+
+	// the message that we received from
+	// the user
 	public $heard;
 
+	// when the chatbot understands something
+	// this will be set to true
+	// so the chatbot will not be confuse
+	// and give the confuse/callback reponse
 	public $understandSomething = false;
 
+	// the comparation operator
+	// we gonna use to compare
+	// the message from the user and what we expected
 	public $verificationType = "contains";
 
 	function __construct() {
@@ -43,10 +55,14 @@ class WebBot
 
 		$output_matches = null;
 
+		// if the comparation operator
+		// is equality we gonna compare with == operator
 		if($howToCompare == "equality")
 		{
 			if($input == $this->heard->content)
 			{
+				// at end we will know
+				// that something match
 				$match = true;
 			}
 		}
@@ -73,6 +89,8 @@ class WebBot
 				$l = count($output_matches);
 				$o = array();
 
+				// extract the matches variable in regex
+				// to more plain variable
 				for($i = 1; $i < $l; $i++)
 				{
 					$o[] = $output_matches[$i][0];
@@ -87,6 +105,9 @@ class WebBot
 			// DONT BE CONFUSE AT END
 			$this->understandSomething = true;
 
+			// call the callback function
+			// because the input from user matches with
+			// something we were expecting
 			$callback($this, $output_matches);
 		}		
 	}

@@ -88,7 +88,8 @@ In the **demo-chatbot.php** file you can put the follow code.
 	// handle the received message
 	$myBot->listen();
 
-	// when the bot get the message "hello" it will respond "Hello my friend"
+	// when the bot get a message that contains "hello"
+	// it will respond "Hello my friend"
 	$myBot->hears("hello", function($bot){
 
 		$bot->answer(new Message("text", "Hello my friend"));
