@@ -5,6 +5,7 @@ namespace Julia;
 include 'Model/Message.php';
 include 'Model/Reply.php';
 include 'Util/HttpRequest.php';
+include 'Util/String.php';
 include 'Emoji.php';
 
 class WebBot
@@ -14,7 +15,7 @@ class WebBot
 
 	public $understandSomething = false;
 
-	public $verificationType = "case-insensitive";
+	public $verificationType = "contains";
 
 	function __construct() {
 		$this->replies = new Reply();
@@ -40,6 +41,8 @@ class WebBot
 		$howToCompare = $compare ?? $this->verificationType;
 		$match = false;
 
+		$output_matches = null;
+
 		if($howToCompare == "equality")
 		{
 			if($input == $this->heard->content)
@@ -50,6 +53,13 @@ class WebBot
 		else if($howToCompare == "case-insensitive")
 		{
 			if(strtolower($input) == strtolower($this->heard->content))
+			{
+				$match = true;
+			}
+		}
+		else if($howToCompare == "contains")
+		{
+			if(Str::contains(Str::lower($this->heard->content), Str::lower($input)))
 			{
 				$match = true;
 			}
@@ -67,7 +77,7 @@ class WebBot
 			// DONT BE CONFUSE AT END
 			$this->understandSomething = true;
 
-			$callback($this);
+			$callback($this, $output_matches);
 		}		
 	}
 
