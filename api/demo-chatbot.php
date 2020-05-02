@@ -56,6 +56,12 @@ $myBot->hears("video", function($bot){
 
 });
 
+$myBot->hears("audio", function($bot){
+
+	$bot->answer(new Message("audio", "https://www.w3schools.com/html/horse.ogg"));
+
+});
+
 $myBot->confuse(function($bot){
 
 	$bot->answer(new Message("text", "I didnt understand " . Emoji::mult(Emoji::$confused) ));

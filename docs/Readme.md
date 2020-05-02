@@ -107,6 +107,7 @@ The supported messages types are:
 - text
 - image
 - video
+- audio
 
 ```php
 <?php
@@ -129,6 +130,13 @@ $myBot->hears("image", function($bot){
 $myBot->hears("send me a video", function($bot){
 
 	$bot->answer(new Message("image", "video-url"));
+
+});
+
+// respond with audio
+$myBot->hears("audio", function($bot){
+
+	$bot->answer(new Message("image", "audio-url"));
 
 });
 

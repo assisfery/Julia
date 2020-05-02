@@ -38,6 +38,10 @@ Julia.says = function(msgs)
 		{
 			$(".chat-box").append('<div class="message-box"><div><video controls><source src="' + msgs[i].content + '"></video></div></div>');
 		}
+		else if(msgs[i].type == "audio")
+		{
+			$(".chat-box").append('<div class="message-box"><div><audio controls><source src="' + msgs[i].content + '"></audio></div></div>');
+		}
 		else // type = "text"
 			$(".chat-box").append('<div class="message-box"><div>' + msgs[i].content + '</div></div>');
 	}
