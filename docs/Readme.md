@@ -81,11 +81,10 @@ You can change if is need the **apiUrl** doing that
 ```
 
 ## Setup Backend
-The file *api/demo-chatbot.php* has a little backend sample implemented
+The file **api/demo-chatbot.php** has a little backend sample implemented
 you can use it or create a new file.
 
-<br>
-In the **chatbot.php** file you can put the follow code.
+In your **chatbot.php** file you can put the follow code.
 
 ```php
 <?php
@@ -191,10 +190,10 @@ $myBot->hears("NO", function($bot){
 ### Answer As
 You can copy answer from one pattern(key/input) to another pattern.
 
-In the follow example we gonna answer for input "/Hi|Hey)/" like
+In the follow example we gonna answer for input "/(Hi|Hey)/" like
 it should be asnswer for "hello" input.
 
-So if the bot received "/Hi|Hey)/ it will give the same answer
+So if the bot received "/(Hi|Hey)/ it will give the same answer
 as "hello" input.
 
 ```php
@@ -204,7 +203,7 @@ $myBot->hears("hello", function($bot){
 
 });
 
-$myBot->hears("/Hi|Hey)/", function($bot){
+$myBot->hears("/(Hi|Hey)/", function($bot){
 	$bot->answerAs("hello");
 }, "regex");
 
@@ -248,9 +247,16 @@ You can send a response with emoji using the Emoji class.
 use Julia\Emoji;
 
 // conversation logic
+
 $myBot->hears("hello", function($bot){
 
-	$bot->answer(new Message("text", "Hello my friend " . Emoji::mult(Emoji::$smile) ));
+	$bot->answer(new Message("text", "Hello my friend " . Emoji::$smile ));
+
+});
+
+$myBot->hears("bye", function($bot){
+
+	$bot->answer(new Message("text", "See you later my friend " . Emoji::mult(Emoji::$smile, 5) ));
 
 });
 ```
