@@ -204,9 +204,26 @@ You can let the bot answer choosing a random message.
 $myBot->hears("bye", function($bot){
 
 	$bot->answerRandom([
-			new Message("text", "See you later"),
-			new Message("text", "Bye my dear friend")
-		]);
+		new Message("text", "See you later"),
+		new Message("text", "Bye my dear friend")
+	]);
 
 });
+```
+
+### Regex
+You can use regex to verify if the user
+input matches and retrieve some variable from that.
+
+The $matches variable will have all value that matches in (.*)
+ordered by the find order.
+
+```php
+$myBot->hears("/My name is (.*) and i am (.*) years old/", function($bot, $matches){
+
+	$bot->answer(
+		new Message("text", "Nice to meet you " . $matches[0] . " so you have " . $matches[1] )
+	);
+
+}, "regex");
 ```

@@ -36,7 +36,7 @@ $myBot->hears("/how is going*|how are you*/", function($bot){
 
 }, "regex");
 
-$myBot->hears("/My name is (.*) and i am (.*)/", function($bot, $matches){
+$myBot->hears("/My name is (.*) and i am (.*) years old/", function($bot, $matches){
 
 	$bot->answer(new Message("text", "Nice to meet you " . $matches[0] . " so you have " . $matches[1] ));
 
