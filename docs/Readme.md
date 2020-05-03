@@ -196,3 +196,17 @@ $myBot->hears("/Hi|Hey)/", function($bot){
 }, "regex");
 
 ```
+
+### Answer Random
+You can let the bot answer choosing a random message.
+
+```php
+$myBot->hears("bye", function($bot){
+
+	$bot->answerRandom([
+			new Message("text", "See you later"),
+			new Message("text", "Bye my dear friend")
+		]);
+
+});
+```
