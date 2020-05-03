@@ -19,9 +19,40 @@
 	<img src="https://res.cloudinary.com/lilaslab/image/upload/v1588375100/chat_byrhim.png">
 </p>
 
+### Web Chatbot
+Start developing your chatbot in easy and practical way.
+
+```php
+<?php
+
+	include "../lib/WebBot.php";
+
+	use Julia\WebBot;
+	use Julia\Message;
+
+	// create the bot
+	$myBot = new WebBot();
+
+	// handle the received message
+	$myBot->listen();
+
+	// when the bot get a message that contains "hello"
+	// it will respond "Hello my friend"
+	$myBot->hears("hello", function($bot){
+
+		$bot->answer(new Message("text", "Hello my friend"));
+
+	});
+
+	// send all responses
+	$myBot->respond();
+
+?>
+```
+
 ### Contribute
 <div>
-	Come contribute with me and let's make the best chatbot engine ever saw.
+	Come contribute with us and let's make the world a better place.
 </div>
 
 ### Others

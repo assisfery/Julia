@@ -4,10 +4,19 @@
 
 # Web Chatbot | Documentation
 
+## Instalation
+Make clone or download of the repository.
+
+```
+git clone https://github.com/assisfery/Julia.git
+```
+
 ## Setup Frontend
+The file **demo.php** has the fronted implemented
+you can use it or create new file.
 
 ### Import file
-In **bot.html** file add these files
+In **bot.html** file add these files.
 
 ```html
 <link rel="stylesheet" href="assets/css/julia.css">
@@ -72,7 +81,11 @@ You can change if is need the **apiUrl** doing that
 ```
 
 ## Setup Backend
-In the **demo-chatbot.php** file you can put the follow code.
+The file *api/demo-chatbot.php* has a little backend sample implemented
+you can use it or create a new file.
+
+<br>
+In the **chatbot.php** file you can put the follow code.
 
 ```php
 <?php
