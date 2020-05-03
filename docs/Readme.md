@@ -246,8 +246,6 @@ You can send a response with emoji using the Emoji class.
 ```php
 use Julia\Emoji;
 
-// conversation logic
-
 $myBot->hears("hello", function($bot){
 
 	$bot->answer(new Message("text", "Hello my friend " . Emoji::$smile ));
@@ -256,7 +254,10 @@ $myBot->hears("hello", function($bot){
 
 $myBot->hears("bye", function($bot){
 
-	$bot->answer(new Message("text", "See you later my friend " . Emoji::mult(Emoji::$smile, 5) ));
+	$bot->answer(new Message("text", "See you later my friend " . Emoji::mult(Emoji::$thumbs_up, 5) ));
 
 });
 ```
+
+The Emoji::mult method is used to repeat the emoji n times.
+
