@@ -240,3 +240,17 @@ $myBot->hears("/My name is (.*) and i am (.*) years old/", function($bot, $match
 
 }, "regex");
 ```
+
+### Emoji
+You can send a response with emoji using the Emoji class.
+
+```php
+use Julia\Emoji;
+
+// conversation logic
+$myBot->hears("hello", function($bot){
+
+	$bot->answer(new Message("text", "Hello my friend " . Emoji::mult(Emoji::$smile) ));
+
+});
+```
