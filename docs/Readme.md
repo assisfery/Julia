@@ -261,3 +261,16 @@ $myBot->hears("bye", function($bot){
 
 The Emoji::mult method is used to repeat the emoji n times.
 
+### Hears Any
+If you want to the bot validate any of value in collection use the hearsAny method.
+
+```php
+$myBot->hearsAny(["see you later", "see you tomorrow"], function($bot){
+
+	$bot->answerRandom([
+			new Message("text", "See you later"),
+			new Message("text", "Bye my dear friend")
+		]);
+
+});
+```

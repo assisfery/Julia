@@ -62,6 +62,15 @@ $myBot->hears("audio", function($bot){
 
 });
 
+$myBot->hearsAny(["see you later", "see you tomorrow"], function($bot){
+
+	$bot->answerRandom([
+			new Message("text", "See you later"),
+			new Message("text", "Bye my dear friend")
+		]);
+
+});
+
 $myBot->confuse(function($bot){
 
 	$bot->answer(new Message("text", "I didnt understand " . Emoji::mult(Emoji::$confused) ));

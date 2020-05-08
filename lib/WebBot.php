@@ -120,6 +120,16 @@ class WebBot
 		}		
 	}
 
+	function hearsAny($inputArray, $callback, $compare = null)
+	{
+		$l = count($inputArray);
+
+		for($i = 0; $i < $l; $i++)
+		{
+			$this->hears($inputArray[$i], $callback, $compare);
+		}
+	}
+
 	// add the answer to the replies
 	function answer($msg)
 	{
