@@ -130,6 +130,36 @@ class WebBot
 		}
 	}
 
+	function hearsAll($inputArray, $callback, $compare = null)
+	{
+		$l = count($inputArray);
+		$verified = 0;
+
+		for($i = 0; $i < $l; $i++)
+		{
+			$howToCompare = $compare ?? $this->verificationType;
+			$output_matches = null;
+
+			if($howToCompare == "contains")
+				if(Str::contains(Str::lower($this->heard->content), Str::lower($inputArray[$i])))
+					$verified++;
+			else if($howToCompare == "equality")
+				if($this->heard->content == $inputArray[$i])
+					$verified++;
+			else if($howToCompare == "regex")
+				if(preg_match($inputArray[$i], $this->heard->content, $output_matches, PREG_OFFSET_CAPTURE))
+				{
+					$verified++;
+				}
+		}
+
+		if($verified == $l)
+		{
+			$this->understandSomething = true;
+			call_user_func($callback, $this);
+		}
+	}
+
 	// add the answer to the replies
 	function answer($msg)
 	{

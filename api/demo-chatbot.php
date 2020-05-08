@@ -71,6 +71,12 @@ $myBot->hearsAny(["see you later", "see you tomorrow"], function($bot){
 
 });
 
+$myBot->hearsAll(["you", "are", "fine"], function($bot){
+
+	$bot->answer(new Message("text", "Yes I do"));
+
+});
+
 $myBot->confuse(function($bot){
 
 	$bot->answer(new Message("text", "I didnt understand " . Emoji::mult(Emoji::$confused) ));

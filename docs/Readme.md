@@ -262,7 +262,8 @@ $myBot->hears("bye", function($bot){
 The Emoji::mult method is used to repeat the emoji n times.
 
 ### Hears Any
-If you want to the bot validate any of value in collection use the hearsAny method.
+If you want to the bot validate just one of value in collection use the hearsAny method.
+So in the example below if the user message contains "see you later" or the see you tomorrow", the bot will respond as its programmed to do in the answer method.
 
 ```php
 $myBot->hearsAny(["see you later", "see you tomorrow"], function($bot){
@@ -274,3 +275,15 @@ $myBot->hearsAny(["see you later", "see you tomorrow"], function($bot){
 
 });
 ```
+
+### Hears Any
+If you want to the bot validate all value in collection use the hearsAll method.
+As the example below the bot will respond to all user message that contains
+"you", "are", "fine", so if user said "are you fine?", "you are fine?"
+or even "fine are you?" it will respond as it is programmed to do.
+
+$myBot->hearsAll(["you", "are", "fine"], function($bot){
+
+	$bot->answer(new Message("text", "Yes I do"));
+
+});
