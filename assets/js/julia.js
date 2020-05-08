@@ -4,6 +4,8 @@ Julia.responseDelay = 1000;
 
 Julia.hears = function(msg)
 {
+	Julia.showTyping();
+
 	$.ajax({
 		type: "POST",
 		url: Julia.apiUrl,
@@ -15,13 +17,19 @@ Julia.hears = function(msg)
 
 		// DELAY 1 S
 		setTimeout(function(){
+
 			Julia.says(data.messages);
+
+			$(".typing-box").remove();
+
 		}, Julia.responseDelay);
 
 	})
 	.fail(function() {
 
 		alert("error");
+
+		$(".typing-box").remove();
 
 	});
 }
@@ -56,9 +64,9 @@ Julia.getMessage = function()
 	if(msg)
 	{
 		$(".compose-box input").val("");
-		Julia.hears(msg)
-
 		$(".chat-box").append('<div class="message-box message-box-2"><div>' + msg + '</div></div>');
+
+		Julia.hears(msg)
 	}
 
 	$('.chat-box').animate({scrollTop: $('.chat-box')[0].scrollHeight}, 100);
@@ -93,6 +101,11 @@ Julia.setEvents = function()
 		}
 
 	});
+}
+
+Julia.showTyping = function()
+{
+	$(".chat-box").append('<div class="typing-box"><div class="lds-ellipsis"><div></div><div></div><div></div></div></div>');	
 }
 
 $(document).ready(function(){

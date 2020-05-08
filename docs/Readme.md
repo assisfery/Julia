@@ -276,7 +276,7 @@ $myBot->hearsAny(["see you later", "see you tomorrow"], function($bot){
 });
 ```
 
-### Hears Any
+### Hears All
 If you want to the bot validate all value in collection use the hearsAll method.
 As the example below the bot will respond to all user message that contains
 "you", "are", "fine", so if user said "are you fine?", "you are fine?"

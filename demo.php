@@ -38,6 +38,14 @@
 			<!-- <div class="message-box message-box-2">
 				<div>Lorem</div>
 			</div> -->
+
+			<!-- <div class="typing-box">
+				<div class="lds-ellipsis">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div> -->
 		</div>
 
 		<br>
