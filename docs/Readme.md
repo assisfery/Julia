@@ -282,8 +282,10 @@ As the example below the bot will respond to all user message that contains
 "you", "are", "fine", so if user said "are you fine?", "you are fine?"
 or even "fine are you?" it will respond as it is programmed to do.
 
+```php
 $myBot->hearsAll(["you", "are", "fine"], function($bot){
 
 	$bot->answer(new Message("text", "Yes I do"));
 
 });
+```
